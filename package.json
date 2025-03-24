@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "@types/eslint": "^8.56.1",
-    "@types/eslint-plugin-jsdoc": "^40.10.0",
     "@types/eslint-scope": "^3.7.4",
     "@types/estree": "^1.0.0",
     "@types/json-schema": "^7.0.13",
