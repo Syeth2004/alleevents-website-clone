@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SearchBar } from "./SearchBar";
 
 export function HeroSection() {
   return (
@@ -11,11 +12,12 @@ export function HeroSection() {
               Alleevents
             </span>
           </h1>
-          <p className="text-lg sm:text-xl mb-12 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
             Find the best events, concerts, workshops, and more happening in your city. 
             Connect with your community and experience the vibrant culture of Chennai.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <SearchBar />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Button size="lg" className="bg-primary hover:bg-primary/90 w-full sm:w-auto">
               Browse Events
             </Button>
