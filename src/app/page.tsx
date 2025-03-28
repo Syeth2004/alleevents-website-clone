@@ -4,6 +4,7 @@ import { CategorySection } from "@/components/CategorySection";
 import { OrganizerSection } from "@/components/OrganizerSection";
 import { ThingsToDoSection } from "@/components/ThingsToDoSection";
 import { CalendarSection } from "@/components/CalendarSection";
+import { MenuSection } from "@/components/MenuSection";
 
 const sampleEvents = [
   {
@@ -44,6 +45,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50">
       <HeroSection />
+      <MenuSection />
       <CalendarSection events={sampleEvents} />
       <EventSection />
       <CategorySection />

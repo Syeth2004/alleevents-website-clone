@@ -69,15 +69,30 @@ export function CalendarSection({ events }: { events: Event[] }) {
         </CardHeader>
         <CardContent>
           <div className="flex justify-between items-center mb-4">
-            <Button variant="outline" onClick={prevMonth}>&lt; Previous Month</Button>
+            <Button 
+              variant="outline" 
+              onClick={prevMonth}
+              className="transition-transform hover:scale-105"
+            >
+              &lt; Previous Month
+            </Button>
             <span className="font-semibold">{format(selectedMonth, 'MMMM yyyy')}</span>
-            <Button variant="outline" onClick={nextMonth}>Next Month &gt;</Button>
+            <Button 
+              variant="outline" 
+              onClick={nextMonth}
+              className="transition-transform hover:scale-105"
+            >
+              Next Month &gt;
+            </Button>
           </div>
 
           {/* Weekdays header */}
           <div className="grid grid-cols-7 gap-1 mb-2">
             {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-              <div key={day} className="text-center text-sm text-muted-foreground">
+              <div 
+                key={day} 
+                className="text-center text-sm text-muted-foreground transition-all duration-200 hover:scale-105"
+              >
                 {day}
               </div>
             ))}
@@ -88,11 +103,11 @@ export function CalendarSection({ events }: { events: Event[] }) {
             {days.map((day, index) => (
               <div
                 key={index}
-                className={`p-2 text-center rounded-md transition-colors ${
+                className={`p-2 text-center rounded-md transition-all duration-200 ${
                   day ? 
                     (format(day, 'yyyy-MM-dd') === format(new Date(), 'yyyy-MM-dd') ? 
                       'bg-primary/10' : 
-                      'hover:bg-muted/50') : 
+                      'hover:bg-muted/50 hover:scale-105') : 
                     'text-muted-foreground'
                 }`}
               >
@@ -100,9 +115,12 @@ export function CalendarSection({ events }: { events: Event[] }) {
                   <>
                     <span className="font-semibold">{format(day, 'd')}</span>
                     {eventsByDate[format(day, 'yyyy-MM-dd')]?.length > 0 && (
-                      <div className="mt-1 space-y-1">
-                        {eventsByDate[format(day, 'yyyy-MM-dd')].map((event, i) => (
-                          <div key={i} className="text-xs text-muted-foreground">
+                      <div className="mt-1">
+                        {eventsByDate[format(day, 'yyyy-MM-dd')].map((event, idx) => (
+                          <div 
+                            key={idx} 
+                            className="text-xs text-muted-foreground truncate transition-colors hover:text-primary-600"
+                          >
                             {event.title}
                           </div>
                         ))}
